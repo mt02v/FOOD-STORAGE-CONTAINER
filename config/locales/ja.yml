@@ -1,83 +1,83 @@
 ---
 ja:
- activerecord:
-  models:
-   post: メッセージ
-   attributes:
-   post:
-     product: 商品名
-     memo: 備考
-     start_time: 期限
-     genre: ジャンル
-  memo:
-     title: 商品
-     content: 備考
-errors:
-  messages:
-    record_invalid: "バリデーションに失敗しました: %{errors}"
-    restrict_dependent_destroy:
-      has_one: "%{record}が存在しているので削除できません"
-      has_many: "%{record}が存在しているので削除できません"
-data:
- abbr_day_names:
-   -日
-   -月
-   -火
-   -水
-   -木
-   -金
-   -土
-  abbr_day_names:
-   -
-   -1月
-   -2月
-   -3月
-   -4月
-   -5月
-   -6月
-   -7月
-   -8月
-   -9月
-   -10月
-   -11月
-   -12月
-   day_names:
-   -日曜日
-   -月曜日
-   -火曜日
-   -水曜日
-   -木曜日
-   -金曜日
-   -土曜日
-   formats:
-    dafault: "%Y/%m/%d"
-    long: "%Y年%m月%d日(%a)"
-    short: "%m/%d"
-   month_names:
-    -
-    -1月
-    -2月
-    -3月
-    -4月
-    -5月
-    -6月
-    -7月
-    -8月
-    -9月
-    -10月
-    -11月
-    -12月
+  activerecord:
+    models:
+      post: メッセージ
+    attributes:
+      post:
+        product: 商品名
+        memo: 備考
+        start_time: 期限
+        genre: ジャンル
+      memo:
+        title: 商品
+        content: 備考
+    errors:
+      messages:
+        record_invalid: "バリデーションに失敗しました: %{errors}"
+        restrict_dependent_destroy:
+          has_one: "%{record}が存在しているので削除できません"
+          has_many: "%{record}が存在しているので削除できません"
+  date:
+    abbr_day_names:
+      - 日
+      - 月
+      - 火
+      - 水
+      - 木
+      - 金
+      - 土
+    abbr_month_names:
+      -
+      - 1月
+      - 2月
+      - 3月
+      - 4月
+      - 5月
+      - 6月
+      - 7月
+      - 8月
+      - 9月
+      - 10月
+      - 11月
+      - 12月
+    day_names:
+      - 日曜日
+      - 月曜日
+      - 火曜日
+      - 水曜日
+      - 木曜日
+      - 金曜日
+      - 土曜日
+    formats:
+      default: "%Y/%m/%d"
+      long: "%Y年%m月%d日(%a)"
+      short: "%m/%d"
+    month_names:
+      -
+      - 1月
+      - 2月
+      - 3月
+      - 4月
+      - 5月
+      - 6月
+      - 7月
+      - 8月
+      - 9月
+      - 10月
+      - 11月
+      - 12月
     order:
-     - :year
-     - :month
-     - :day
-    datetime:
-     distance_in_words:
-     about_x_hours:
-      one: 約1時間
-      other: 約%{count}ヶ月
-    about_x_months:
-      one: 約1ヶ月
+      - :year
+      - :month
+      - :day
+  datetime:
+    distance_in_words:
+      about_x_hours:
+        one: 約1時間
+        other: 約%{count}時間
+      about_x_months:
+        one: 約1ヶ月
         other: 約%{count}ヶ月
       about_x_years:
         one: 約1年

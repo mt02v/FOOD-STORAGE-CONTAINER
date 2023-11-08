@@ -1,26 +1,14 @@
-<nav class="navbar navbar-expand-sm navbar-light bg-light fixed-top">
-  <%= link_to "FOOD-STORAGE-CONTAINER", root_path, class: "navbar-brand text-dark" %>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  
-  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-    <ul class="navbar-nav">
-      <%= link_to "在庫確認", posts_path, class: "nav-item nav-link active" %>
-      <%= link_to "買い物リスト", memos_path, class: "nav-item nav-link active" %>
+<div class="main-container" >
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <div class="btn-container">
     <% if user_signed_in? %>
       <%# ログイン時 %>
-      <ul class="navbar-nav ml-auto">
-        <%= link_to "アカウント編集", edit_user_registration_path, class: "nav-item nav-link active" %>
-        <%= link_to "ログアウト", destroy_user_session_path, class: "nav-item nav-link active", method: :delete, data: { confirm: "ログアウトしますか？" } %>
-      </ul>
+      <%= link_to "在庫確認", posts_path, class: "btn btn-outline-info rounded-pill" %>
+      <%= link_to "買い物リスト", memos_path, class: "btn btn-outline-info rounded-pill" %>
     <% else %>
       <%# 非ログイン時 %>
-      <ul class="navbar-nav ml-auto">
-        <%= link_to "新規登録", new_user_registration_path, class: "nav-item nav-link active" %>
-        <%= link_to "ログイン", new_user_session_path, class: "nav-item nav-link active" %>
-        <%= link_to "ゲストログイン", users_guest_sign_in_path, method: :post, class: "nav-item nav-link active" %>
-      </ul>
+       <%= link_to "新規登録", new_user_registration_path, class: 'btn btn-outline-info rounded-pill' %>
+      <%= link_to "ログイン", new_user_session_path, class: 'btn btn-outline-info rounded-pill' %>
+      <%= link_to "ゲストログイン", users_guest_sign_in_path, method: :post, class: 'btn btn-outline-success rounded-pill' %>
     <% end %>
   </div>
-</nav>
