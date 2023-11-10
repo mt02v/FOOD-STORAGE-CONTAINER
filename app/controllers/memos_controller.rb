@@ -41,6 +41,10 @@ private
   @memo = Memo.find(params[:id])
  end
 
+ def memo_params
+  params.require(:memo).permit(:title, :content).merge(user_id: current_user.id)
+ end
+
  def move_to_signed_in
   unless user_signed_in?
     #サインインしていないユーザーはログインページが表示される

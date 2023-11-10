@@ -37,7 +37,10 @@ class PostsController < ApplicationController
 
   def destroy
     @post.destroy!
-    redirect_to post_path, alert: "#{@post.product}を削除しました"
+    redirect_to posts_path, alert: "#{@post.product}を削除しました"
+  end
+
+  def show
   end
 
   private
@@ -47,7 +50,7 @@ class PostsController < ApplicationController
   end
 
   def post_params
-    params.require(:post).permit(:product, :memo, :start_time, genre_id: [], user_id: @current_user.id)
+    params.require(:post).permit(:product, :memo, :start_time, :genre_id , user_id: @current_user.id)
   end
 
   def move_to_signed_in
