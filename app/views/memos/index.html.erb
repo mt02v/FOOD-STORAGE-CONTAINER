@@ -2,19 +2,19 @@
   <div class="split-item split-left">
    <div class="split-left_inner">
     <h3>リスト追加</h3>
-    <% form_with model: @memo, local: true do |form| %>
-    <div>
-      <%= form.label :title %>
-      <%= form.text_field :title %>
-    </div>
-    <div>
-      <%= form.label :content %>
-      <%= form.text_field :content %>
-    </div>
-    <div>
-      <%= form.submit "追加" %>
-    </div>
-    <% end %>
+    <%= form_with model: @memo, local: true do |form| %>
+  <div>
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+  </div>
+  <div>
+    <%= form.label :content %>
+    <%= form.text_field :content %>
+  </div>
+  <div>
+    <%= form.submit "追加" %>
+  </div>
+<% end %>
   </div>
 </div>
 <div class="split-item split-right">

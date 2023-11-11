@@ -19,6 +19,7 @@ def create
 end
 
 def edit
+   @memo = Memo.find(params[:id])
 end
 
 def update
