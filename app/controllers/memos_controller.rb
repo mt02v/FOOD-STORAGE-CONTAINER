@@ -32,7 +32,8 @@ def update
 end
 
 def destroy
-  @memo.destroy!
+  @memo = Memo.find(params[:id])
+  @memo.destroy
   redirect_to memos_path, alert: "削除しました"
 end
 
