@@ -4,9 +4,12 @@ class PostsController < ApplicationController
   before_action :move_to_signed_in, except: [:top]
 
   def index
+    if params[:from_memo].present?
+      # 在庫の追加
+      Post.create(product: params[:title], start_time: Date.today, user_id: current_user.id)
+    end
     @genres = Genre.all
     @posts = params[:name].present? ? Genre.find(params[:name]).posts.where(user_id: current_user.id) : Post.where(user_id: current_user.id)
-
   end
 
   def new
