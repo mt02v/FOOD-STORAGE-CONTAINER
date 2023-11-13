@@ -1,5 +1,5 @@
 <h2 class="text-center"><%= t('.sign_in') %></h2>
-<%= form_with(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+<%= form_with(as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="form_group">
     <%= f.label :email %>
     <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control' %>
