@@ -1,25 +1,25 @@
 <div class="memos-container">
   <div class="split-item split-left">
    <div class="split-left_inner">
-    <h3>リスト追加</h3>
-    <% form_with model: @memo, local: true do |form| %>
-    <div>
-      <%= form.label :title %>
-      <%= form.text_field :title %>
-    </div>
-    <div>
-      <%= form.label :content %>
-      <%= form.text_field :content %>
-    </div>
-    <div>
-      <% form.submit "追加" %>
-    </div>
-    <% end %>
+    <h2>リスト追加</h2>
+    <%= form_with model: @memo, local: true do |form| %>
+  <div>
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+  </div>
+  <div>
+    <%= form.label :content %>
+    <%= form.text_field :content %>
+  </div>
+  <div>
+    <%= form.submit "追加" %>
+  </div>
+<% end %>
   </div>
 </div>
 <div class="split-item split-right">
   <div class="split-right_inner">
-   <h1 class="text-center">買い物リスト</h1>
+   <h2 class="text-center">買い物リスト</h2>
    <table class="table mt-4">
      <thead>
        <tr>
@@ -35,7 +35,7 @@
            <td><%= link_to "#{memo.title}", edit_memo_path(memo) %></td>
            <td><%= memo.content %></td>
            <td class="botton">
-             <%= link_to new_post_path, class: "btn btn-outline-primary" do %>
+             <%= link_to posts_path(from_memo: true, title: memo.title), class: "btn btn-outline-primary" do %>
                <span class="d-none d-md-inline">在庫に追加</span>
              <% end %>
            </td>

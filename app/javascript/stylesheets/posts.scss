@@ -1,0 +1,74 @@
+th,
+td {
+vertical-align: middle !important;
+}
+
+span.alort {
+color: red;
+}
+
+span.warning {
+color:#de8500;
+}
+
+span.near_deadline {
+color: #de8500;
+}
+
+.mb5 {
+margin-bottom: 1em;
+
+}
+
+.mgr-10 {
+padding-right: 0.3rem;
+padding-left: 0.3rem;
+}
+
+.botton {
+text-decoration: none;
+color: white;
+}
+
+
+.main-container h2 {
+  position:absolute;
+  top: 15%;
+  left: 60%;
+  color: rgb(255, 255, 255);
+}
+.main-container p {
+  position: absolute;
+  top: 40%;
+  left: 60%;
+  color: rgb(255, 255, 255);
+  size: 10px;
+}
+
+.btn-container {
+  position: absolute;
+  right: 50px;
+  bottom: 20px;
+
+}
+
+.description {
+  margin-top: 5em;
+}
+
+.row {
+  margin-top: 3em;
+}
+
+.img-fluid {
+  width: 250px;
+  height: 250px;
+}
+
+.featurette {
+  text-align: center;
+}
+
+
+  margin: 10px
+}

@@ -19,6 +19,7 @@ def create
 end
 
 def edit
+   @memo = Memo.find(params[:id])
 end
 
 def update
@@ -31,7 +32,8 @@ def update
 end
 
 def destroy
-  @memo.destroy!
+  @memo = Memo.find(params[:id])
+  @memo.destroy
   redirect_to memos_path, alert: "削除しました"
 end
 
@@ -39,6 +41,10 @@ private
 
  def set_memo
   @memo = Memo.find(params[:id])
+ end
+
+ def memo_params
+  params.require(:memo).permit(:title, :content).merge(user_id: current_user.id)
  end
 
  def move_to_signed_in
