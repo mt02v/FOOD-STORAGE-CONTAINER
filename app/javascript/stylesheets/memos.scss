@@ -1,0 +1,48 @@
+.memos-container {
+  padding: 10px 30px;
+}
+
+.botton {
+  text-align: right;
+}
+
+.split {
+  display: table;
+  width: 100%;
+}
+
+.split-item {
+  display: table-cell;
+  padding: 40px;
+  width: 10%;
+}
+
+.split-left {
+  position: relative;
+}
+
+.split-right {
+  position: relative;
+}
+
+.split-left__inner {
+  height: 100%;
+  position: fixed;
+  width: 80%;
+}
+
+@media screen and (max-width: 724px) {
+  .split {
+    display: block;
+  }
+
+  .split-item {
+    display: block;
+    width: auto;
+  }
+
+  .split-left__inner {
+    position: inherit;
+    width: auto;
+  }
+}

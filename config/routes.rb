@@ -3,7 +3,8 @@ Rails.application.routes.draw do
     root to: "top#index"
      devise_for :users, controllers: {
        registrations: "users/registrations",
-       passwords: "users/passwords"
+       passwords: "users/passwords",
+       sessions: "users/sessions"
   }
 
  get "/index/:genre", to: "items#index"
@@ -11,7 +12,7 @@ Rails.application.routes.draw do
  resources :users, only: [:show]
  resources :posts
  resources :memos
-  devise_scope :user do
+ devise_scope :user do
     post "users/guest_sign_in", to: "users/sessions#guest_sign_in"
  end
 end

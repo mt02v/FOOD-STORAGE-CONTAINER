@@ -1,0 +1,30 @@
+<%= render "layouts/error_messages" %>
+<%= form_with model: @post, local: true do |form| %>
+  <div class="check_box">
+    <%= form.collection_check_boxes(:genre_ids, Genre.all, :id, :name) do |genre| %>
+      <div class='form-check'>
+        <%= genre.check_box %>
+        <%= genre.label %>
+      </div>
+    <% end %>
+  </div>
+  <br>
+  <div class="product">
+    <div class="form-tag"><%= form.label :product %></div>
+    <%= form.text_field :product %>
+  </div>
+  <br>
+  <div class="start_time">
+    <div class="form-tag"><%= form.label :start_time %></div>
+    <%= form.date_field :start_time %>
+  </div>
+  <br>
+  <div class="memo">
+    <div class="form-tag"><%= form.label :memo %></div>
+    <%= form.text_field :memo %>
+  </div>
+  <br>
+  <div class="d-grid gap-2 col-6">
+    <%= form.submit button_value, class: "btn btn-primary btn-block" %>
+  </div>
+<% end %>
