@@ -1,0 +1,20 @@
+<div class= "mx-auto col-11 col-sm-10 col-lg-8 col-xl-6">
+
+
+<h1>Hey! <i class="fa-solid fa-cart-shopping"></i><strong>FOOD-STORAGE-CONTAINER</strong></h1>
+  <p>環境省のデータから令和3年度は532万トンのうち家庭系は244万トンもの食品ロスが出ています。<br>
+  そして「NEP Food Waste Index Report 2021」での2021年版の食品ロスランキングでは日本は14位で800万トンもの食品を捨てている現状があります。</p>
+  <p>買っていたものを忘れ食材が悪くなったので捨ててしまうのは実にお金や食材がもったいない!</p>
+  <p>ならば、買ってきたものを忘れないよう管理しよう！！</p>
+  <div class= "btn-wrapper col-4 mx-auto">
+    <div class="row">
+      <%= link_to "新規登録", new_user_registration_path, class: "btn btn-primary btn-block mb-4" %>
+    </div>
+    <div class="row">
+      <%= link_to "ログイン", new_user_session_path, class: "btn btn-info btn-block mb-4" %>
+    </div>
+    <div class="row">
+      <%= link_to "ゲストログイン(閲覧用)", users_guest_sign_in_path, method: :post, class: "btn btn-secondary  btn-block mb-4" %>
+    </div>
+  </div>
+</div>

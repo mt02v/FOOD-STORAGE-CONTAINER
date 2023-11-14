@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-sm navbar-light bg-light fixed-top">
-  <i class="fa-solid fa-utensils"></i>
+  <i class="fa-solid fa-cart-shopping"></i>
   <%= link_to "FOOD-STORAGE-CONTAINER", root_path, class: "navbar-brand text-dark" %>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -26,7 +26,7 @@
         <%= link_to "新規登録", new_user_registration_path, class: "nav-item nav-link active" %>
           <i class="fas fa-sign-in-alt"></i>
         <%= link_to "ログイン", new_user_session_path, class: "nav-item nav-link active" %>
-          <i class="fa-solid fa-arrow-right-to-bracket"></i>
+          <i class="fa-solid fa-circle-user"></i>
         <%= link_to "ゲストログイン(閲覧用)", users_guest_sign_in_path, method: :post, class: "nav-item nav-link active" %>
       </ul>
     <% end %>
