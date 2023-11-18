@@ -12,3 +12,16 @@ body {
     border-radius: 0.3rem;
     margin: 10px;
 }
+
+.table thead th, .table td {
+    vertical-align: middle;
+    border-bottom: 2px solid #dee2e6;
+    text-align: center !important;
+}
+
+.table {
+    width: 100%;
+    margin-bottom: 1rem;
+    color: #212529;
+    table-layout: fixed;
+}

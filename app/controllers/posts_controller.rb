@@ -62,7 +62,7 @@ class PostsController < ApplicationController
   end
 
   def post_params
-    params.require(:post).permit(:product, :memo, :start_time, :genre_ids , user_id: @current_user.id)
+    params.require(:post).permit(:product, :memo, :start_time, user_id: @current_user.id, genre_ids: [])
   end
 
   def move_to_signed_in
