@@ -20,11 +20,9 @@ class PostsController < ApplicationController
     @post = Post.new(post_params)
     @post.user_id = current_user.id
     if @post.save
-     params[:post][:genre_ids].each do |genre_id|
-       if(genre_id!="")
-         @post_genre = PostGenre.create(post_id: @post.id, genre_id: genre_id, user_id: @post.user_id)
-       end
-      end
+
+         @post_genre = PostGenre.create(post_id: @post.id, genre_id: params[:post][:genre_ids], user_id: @post.user_id)
+
       redirect_to posts_path, notice: "#{@post.product}を追加しました"
     else
       flash.now[:alert] = "追加に失敗しました"
@@ -37,6 +35,8 @@ class PostsController < ApplicationController
 
   def update
     @post = Post.find(params[:id])
+    @post.post_genres.destroy_all
+     PostGenre.create(post_id: @post.id, genre_id: params[:post][:genre_ids], user_id: @post.user_id)
     if @post.update(post_params)
       redirect_to posts_path, notice: "#{@post.product}を更新しました"
     else
@@ -62,7 +62,7 @@ class PostsController < ApplicationController
   end
 
   def post_params
-    params.require(:post).permit(:product, :memo, :start_time, user_id: @current_user.id, genre_ids: [])
+    params.require(:post).permit(:product, :memo, :start_time,  user_id: @current_user.id)
   end
 
   def move_to_signed_in

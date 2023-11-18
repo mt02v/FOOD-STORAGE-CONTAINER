@@ -1,12 +1,17 @@
 <%= render "layouts/error_messages" %>
 <%= form_with model: @post, local: true do |form| %>
   <div class="check_box">
-    <%= form.collection_check_boxes(:genre_ids, Genre.all, :id, :name) do |genre| %>
-      <div class='form-check'>
-        <%= genre.check_box %>
-        <%= genre.label %>
-      </div>
-    <% end %>
+    <%#= form.collection_check_boxes(:genre_ids, Genre.all, :id, :name) do |genre| %>
+      <!--<div class='form-check'>-->
+        <%#= genre.check_box %>
+        <%#= genre.label %>
+      <!--</div>-->
+    <%# end %>
+   <% if @post.post_genres.size > 0 %>
+   <%= form.collection_radio_buttons(:genre_ids, Genre.all, :id, :name,{ checked:  @post.post_genres.first.genre_id }) %>
+   <% else %>
+   <%= form.collection_radio_buttons(:genre_ids, Genre.all, :id, :name) %>
+   <% end %>
   </div>
   <br>
   <div class="product">
