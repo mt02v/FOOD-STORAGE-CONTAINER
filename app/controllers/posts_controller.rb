@@ -6,7 +6,7 @@ class PostsController < ApplicationController
   def index
     if params[:from_memo].present?
       # 在庫の追加
-      Post.create(product: params[:title], start_time: Date.today, user_id: current_user.id)
+    Post.create(product: params[:title], start_time: Date.today, user_id: current_user.id)
     end
     @genres = Genre.all
     @posts = params[:name].present? ? Genre.find(params[:name]).posts.where(user_id: current_user.id) : Post.where(user_id: current_user.id)
@@ -20,8 +20,7 @@ class PostsController < ApplicationController
     @post = Post.new(post_params)
     @post.user_id = current_user.id
     if @post.save
-
-         @post_genre = PostGenre.create(post_id: @post.id, genre_id: params[:post][:genre_ids], user_id: @post.user_id)
+    @post_genre = PostGenre.create(post_id: @post.id, genre_id: params[:post][:genre_ids], user_id: @post.user_id)
 
       redirect_to posts_path, notice: "#{@post.product}を追加しました"
     else

@@ -25,3 +25,9 @@ body {
     color: #212529;
     table-layout: fixed;
 }
+
+.collection_radio_buttons {
+    flex-direction: column;
+    display: inline-flex;
+    text-align: center;
+}
