@@ -35,7 +35,7 @@
            <td><%= link_to "#{memo.title}", edit_memo_path(memo) %></td>
            <td><%= memo.content %></td>
            <td class="botton">
-             <%= link_to posts_path(from_memo: true, title: memo.title), class: "btn btn-outline-primary" do %>
+             <%= link_to posts_path(from_memo: true, title: memo.title, content: memo.content), class: "btn btn-outline-primary" do %>
                <span class="d-none d-md-inline">在庫に追加</span>
              <% end %>
            </td>
