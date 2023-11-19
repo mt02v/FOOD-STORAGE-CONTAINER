@@ -10,9 +10,20 @@
     <%# end %>
   <%# チェックボックスからラジオボタンに変更してチェック済みオプションをつける %>
    <% if @post.post_genres.size > 0 %>
-   <%= form.collection_radio_buttons(:genre_ids, Genre.all, :id, :name,{ checked:  @post.post_genres.first.genre_id }) %>
+  <%# ラジオボタンのオプションをつける do |b|をつけて、</div>で囲む。横並びとラベルとボタンをひとくくりにする %>
+   <%= form.collection_radio_buttons(:genre_ids, Genre.all, :id, :name,{ checked:  @post.post_genres.first.genre_id }) do |b| %>
+   <div>
+   <%= b.radio_button %>
+   <%= b.label %>
+   </div>
+   <% end %>
    <% else %>
-   <%= form.collection_radio_buttons(:genre_ids, Genre.all, :id, :name) %>
+   <%= form.collection_radio_buttons(:genre_ids, Genre.all, :id, :name) do |b| %>
+   <div>
+   <%= b.radio_button %>
+   <%= b.label %>
+   </div>
+   <% end %>
    <% end %>
   </div>
   <br>
